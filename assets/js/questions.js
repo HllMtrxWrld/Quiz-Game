@@ -18,7 +18,7 @@ let questions = [
     },
 
     {
-        question: "String values must be enclosed within _____ when being assigned to variables."
+        question: "String values must be enclosed within _____ when being assigned to variables.",
         options: ["commas", "curly brackets", "quotes", "parentheses"],
         rightOption: "curly brackets" 
     },
