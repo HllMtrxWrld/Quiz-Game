@@ -12,60 +12,32 @@ let timerCounting = 0;
 
 
 
+function nextQuestion() {
+  startButton.disabled = true;
+  question.textContent = questions[questionIndex].question;
+  for (let i = 0; i < questions[questionIndex].options.length; i++) {
+    let option = document.createElement("button");
+    option.className = "option";
+    option.textContent = questions[questionIndex].options[i];
+    choiseBox.appendChild(option);
+      option.addEventListener("click", function (event) {
+        let button1 = event.target;
+        if (button1.textContent === questions[questionIndex].rightOption) {
+        console.log("you won");
+        questionIndex++;
+        choiseBox.innerText = "";
+        nextQuestion();
+        } else {
+        console.log("wrong");
+        questionIndex++;
+        choiseBox.innerText = "";
+        timerCounting -= 15;
+        nextQuestion();
+        };
+      });
+  };
+};
 
-// startButton.addEventListener("click", function startGame() {
-//     questionsArea.classList.remove("hide");
-//      startButton.disabled = true;
-//     question.textContent = questions[0].question;
-
-//     for (let i = 0; i < questions[questionIndex].options.length; i++) {
-//         const option = document.createElement("button");
-//         option.className = "option";
-//         option.textContent = questions[questionIndex].options[i];
-//         choiseBox.appendChild(option);
-
-//         option.addEventListener("click", function (event) {
-//          const button1 = event.target;
-//          if (button1.textContent === questions[0].rightOption) {
-//              console.log("you won");
-//              questionIndex++;
-//             nextQuestion();
-//         };
-//     });
-   
-// };   
-// });
-
-
-// function nextQuestion() {
-//     question.textContent = questions[questionIndex].question;
-//     var buttonList = document.querySelectorAll(".option");
-//     // console.log(liList);
-    
-//     for (let i = 0; i < questions[questionIndex].options.length; i++) {
-//         buttonList[i].textContent = questions[questionIndex].options[i];  
-//     };  
-//     chooseOption();
-//     console.log("you won");
-//     questionIndex++;
-//     nextQuestion();
-
-// };
-
-
-
-// function chooseOption(e) {
-//     // choiseBox.addEventListener("click", function (event) {
-//         const button = e.target;
-//         if (button1.textContent === questions[questionIndex].rightOption) {
-//             console.log("you won");
-//             questionIndex++;
-//             nextQuestion();
-//         };
-// // });
-// };
-
-startButton.addEventListener("click", begin);
 
 function countdown() {
     timerCounting = 60;
@@ -87,3 +59,8 @@ function countdown() {
 
 
 
+  startButton.addEventListener("click", function () {
+    begin();
+    nextQuestion();
+
+  });
