@@ -28,9 +28,9 @@ https://hllmtrxwrld.github.io/Quiz-Game/
 ## Credits
 
 N/A
-![alt text](./Assets/img/1.png)
-![alt text](./Assets/img/2.png)
-![alt text](./Assets/img/3.png)
+![alt text](./assets/img/1.png)
+![alt text](./assets/img/2.png)
+![alt text](./assets/img/3.png)
 ## License
 
 N/A
